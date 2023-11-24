@@ -1,6 +1,7 @@
 <x-action-section>
     <x-slot name="title">
         {{ __('Delete Account') }}
+         <!--Xoa tai khoan hien tai-->
     </x-slot>
 
     <x-slot name="description">
