@@ -38,16 +38,6 @@
                 {{ $slot }}
             </main>
         </div>
-        <!-- Logout Option -->
-        <div class="absolute top-0 right-0 p-4">
-            @auth
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit">Logout</button>
-                </form>
-            @endauth
-        </div>
-
         @stack('modals')
 
         @livewireScripts

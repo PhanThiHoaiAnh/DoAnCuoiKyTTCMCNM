@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/',[HomeController::class,'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -30,3 +29,9 @@ Route::middleware([
 });
 
 route::get('/redirect',[HomeController::class,'redirect']);
+
+route::get('/view_catagory',[AdminController::class,'view_catagory']);
+
+route::post('/add_catagory',[AdminController::class,'add_catagory']);
+
+route::get('/delete_catagory/{id}',[AdminController::class,'delete_catagory']);
