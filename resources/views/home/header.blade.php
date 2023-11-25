@@ -1,3 +1,4 @@
+
 <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -28,7 +29,13 @@
                         </li>
                         
                         <li class="nav-item">
-                           <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
+                           
+
+                           <a style="display:flex"  class="nav-link" href="{{url('show_cart')}}">Cart
+                           <img src="images/cart.png" width="20" height="20">
+                           </a> 
+                           
+                           
                         </li>
                         <form class="form-inline">
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
