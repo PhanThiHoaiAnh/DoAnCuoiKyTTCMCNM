@@ -12,7 +12,12 @@
         "laravel/jetstream": "^3.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
+<<<<<<< HEAD
         "livewire/livewire": "^2.11"
+=======
+        "livewire/livewire": "^2.11",
+        "stripe/stripe-php": "^13.4"
+>>>>>>> 5601ec4 (add payment)
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
