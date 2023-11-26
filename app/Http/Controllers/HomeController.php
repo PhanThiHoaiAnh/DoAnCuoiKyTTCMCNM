@@ -9,11 +9,10 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
-<<<<<<< HEAD
-=======
+
 use Session;
 use Stripe;
->>>>>>> 5601ec4 (add payment)
+
 
 class HomeController extends Controller
 {
@@ -172,13 +171,11 @@ class HomeController extends Controller
 
     public function stripe($totalprice)
     {
-<<<<<<< HEAD
+
         
         return view('home.stripe', compact('totalprice'));
     }
-=======
-        return view('home.stripe',compact('totalprice'));
-    }
+
 
     public function stripePost(Request $request,$totalprice)
     {
@@ -243,5 +240,4 @@ class HomeController extends Controller
         return back();
     }
 
->>>>>>> 5601ec4 (add payment)
 }
