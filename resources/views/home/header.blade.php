@@ -28,15 +28,28 @@
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                         
-                        <li class="nav-item">
-                           
+                        
+                        @if (Route::has('login'))
+                        @auth
 
-                           <a style="display:flex"  class="nav-link" href="{{url('show_cart')}}">Cart
-                           <img src="images/cart.png" width="20" height="20">
-                           </a> 
-                           
-                           
+                        <li class="nav-item">
+                           <a style="display:flex" class="nav-link"   href="{{url('show_cart')}}">Cart[<span style="color: green;">{{App\Models\cart::where('user_id','=',Auth::user()->id)->count()}}]</span>
+                           <img src="images/cart.png" width="30" height="30">
+                        </a>
                         </li>
+
+                        @else
+
+                         <li class="nav-item">
+                           <a style="display:flex" class="nav-link"   href="{{url('show_cart')}}">Cart[0]
+                           <img src="images/cart.png" width="30" height="30">
+                        </a>
+                        </li>
+
+                       
+                        @endauth
+
+                        @endif
 
                         <li class="nav-item">
                            <a class="nav-link" href="{{url('show_order')}}">Order
