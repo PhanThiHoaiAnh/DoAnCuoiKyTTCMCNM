@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <!-- Basic -->
-      <base href="/public">
-      
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <!-- Mobile Metas -->
@@ -15,25 +14,34 @@
       <link rel="shortcut icon" href="images/favicon.png" type="">
       <title>Famms - Fashion HTML Template</title>
       <!-- bootstrap core css -->
-      <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href=" {{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
-      <link href="home/css/font-awesome.min.css" rel="stylesheet" />
+      <link href="{{asset('home/css/font-awesome.min.css')}}" rel="stylesheet" />
       <!-- Custom styles for this template -->
-      <link href="home/css/style.css" rel="stylesheet" />
+      <link href="{{asset('home/css/style.css')}}" rel="stylesheet" />
       <!-- responsive style -->
-      <link href="home/css/responsive.css" rel="stylesheet" />
+      <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
    </head>
    <body>
+   @include('sweetalert::alert')
       <div class="hero_area">
          <!-- header section strats -->
          @include('home.header')
          <!-- end header section -->
 
-     
+         @if(session()->has('message'))
+
+            <div class="alert alert-success" >
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+               {{session()->get('message')}}
+
+            </div>
+
+         @endif
  
       <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width:50%;padding:30px">
                      <div class="img-box" style="padding: 20px;">
-                        <img src="product/{{$product->image}}" alt="">
+                        <img src="/product/{{$product->image}}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -104,6 +112,37 @@
          
          </p>
       </div>
+      <script>
+      function confirmation(ev) {
+        ev.preventDefault();
+        var urlToRedirect = ev.currentTarget.getAttribute('href');  
+        console.log(urlToRedirect); 
+        swal({
+            title: "Are you sure to add cart this product",
+            text: "You will be broke (-_-)!!",
+            icon: "info",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willCancel) => {
+            if (willCancel) {
+
+
+                 
+                window.location.href = urlToRedirect;
+               
+            }  
+            else
+            {
+                
+            }
+
+
+        });
+
+        
+    }
+</script>
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

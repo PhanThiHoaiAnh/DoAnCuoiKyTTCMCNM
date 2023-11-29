@@ -11,6 +11,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Comment;
 use App\Models\Reply;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Session;
 use Stripe;
@@ -65,41 +66,78 @@ class HomeController extends Controller
         if(Auth::id())
         {
             $user=Auth::user();
+
+            $userid=$user->id;
             
             $product=product::find($id);
 
-            $cart=new cart;
+            $product_exist_id=cart::where('Product_id','=',$id)->where('user_id','=',
+                $userid)->get('id')->first();
 
-            $cart->name=$user->name;
-
-            $cart->email=$user->email;
-
-            $cart->phone=$user->phone;
-
-            $cart->address=$user->address;
-
-            $cart->user_id=$user->id;
-            
-            $cart->Product_title=$product->title;
-
-            if($product->discount_price!=null)
+            if ($product_exist_id) 
             {
-                $cart->price=$product->discount_price * $request->quantity;
-            }
+                $cart=cart::find($product_exist_id)->first();
+
+                $quantity=$cart->quantity;
+
+                $cart->quantity=$quantity + $request->quantity;
+
+                if($product->discount_price!=null)
+                {
+                    $cart->price=$product->discount_price * $cart->quantity;
+                }
+                else
+                {
+                    $cart->price=$product->price * $cart->quantity;
+                }
+
+                $cart->save();
+
+                ALert::info('Product Added Successfully','We have added product to the cart');
+
+                return redirect()->back();
+
+            } 
             else
             {
-                $cart->price=$product->price * $request->quantity;
-            }
+                        $cart=new cart;
 
-            $cart->image=$product->image;
+                        $cart->name=$user->name;
 
-            $cart->Product_id=$product->id;
+                        $cart->email=$user->email;
 
-            $cart->quantity=$request->quantity;
+                        $cart->phone=$user->phone;
 
-            $cart->save();
+                        $cart->address=$user->address;
 
-            return redirect()->back();
+                        $cart->user_id=$user->id;
+                        
+                        $cart->Product_title=$product->title;
+
+                        if($product->discount_price!=null)
+                        {
+                            $cart->price=$product->discount_price * $request->quantity;
+                        }
+                        else
+                        {
+                            $cart->price=$product->price * $request->quantity;
+                        }
+
+                        $cart->image=$product->image;
+
+                        $cart->Product_id=$product->id;
+
+                        $cart->quantity=$request->quantity;
+
+                        $cart->save();
+
+                        ALert::info('Product Added Successfully','We have added product to the cart');
+
+                        return redirect()->back();
+
+            }   
+            
+            
             
         }
 
@@ -322,6 +360,23 @@ class HomeController extends Controller
         $search_text=$request->search;
         $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(6);
         return view('home.userpage',compact('product','comment','reply'));
+    }
+
+    public function product()
+    {
+        $product=Product::paginate(6);
+        $comment=comment::orderby('id','desc')->get();
+        $reply=reply::all();
+        return view('home.all_product',compact('product','comment','reply'));
+    }
+
+    public function search_product(Request $request)
+    {
+        $comment=comment::orderby('id','desc')->get();
+        $reply=reply::all();
+        $search_text=$request->search;
+        $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(6);
+        return view('home.all_product',compact('product','comment','reply'));
     }
 
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Product;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 use Notification;
 use App\Notifications\SendEmailNotification;
@@ -15,8 +16,16 @@ class AdminController extends Controller
 {
     public function view_catagory()
     {
-        $data=catagory::all();
-        return view('admin.catagory',compact('data'));
+        if(Auth::id())
+        {
+            $data=catagory::all();
+            return view('admin.catagory',compact('data'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+        
     }
 
     public function add_catagory(Request $request)
@@ -90,24 +99,34 @@ class AdminController extends Controller
 
     public function update_product_confirm(Request $request, $id )
     {
-        $product=product::find($id);
 
-        $product->title=$request->title;
-        $product->description=$request->description;
-        $product->price=$request->price;
-        $product->quantity=$request->quantity;
-        $product->discount_price=$request->dis_price;
-        $product->catagory=$request->catagory;
-        $image=$request->image;
-        $imagename=time().'.'.$image->getClientOriginalExtension();
+        if(Auth::id())
+        {
+            $product=product::find($id);
 
-        $request->image->move('product',$imagename);
-        $product->image=$imagename;
+            $product->title=$request->title;
+            $product->description=$request->description;
+            $product->price=$request->price;
+            $product->quantity=$request->quantity;
+            $product->discount_price=$request->dis_price;
+            $product->catagory=$request->catagory;
+            $image=$request->image;
+            $imagename=time().'.'.$image->getClientOriginalExtension();
 
-        $product->save();
+            $request->image->move('product',$imagename);
+            $product->image=$imagename;
 
-        return redirect()->back()->with('message','Product Updated Successfully');
+            $product->save();
 
+            return redirect()->back()->with('message','Product Updated Successfully');
+
+        }
+        else
+        {
+            return redirect('login');
+        }
+
+        
     }
 
     public function order()

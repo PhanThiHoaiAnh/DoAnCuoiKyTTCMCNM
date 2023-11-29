@@ -11,7 +11,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>All Product</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href=" {{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -20,32 +20,16 @@
       <link href="{{asset('home/css/style.css')}}" rel="stylesheet" />
       <!-- responsive style -->
       <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    </head>
    <body>
-
-      @include('sweetalert::alert')
-
       <div class="hero_area">
-         <!-- header section strats -->
-         @include('home.header')
-         <!-- end header section -->
-         <!-- slider section -->
-         @include('home.slider')
-         <!-- end slider section -->
-      </div>
-      <!-- why section -->
-      @include('home.why')
-      <!-- end why section -->
+        <!-- header section strats -->
+        @include('home.header')
       
-      <!-- arrival section -->
-      @include('home.new_arrival')
-      <!-- end arrival section -->
-      
-      <!-- product section -->
-      @include('home.product')
-      <!-- end product section -->
+        <!-- product section -->
+        @include('home.product_view')
+        <!-- end product section -->
 
       <!--Comment and reply system starts hear -->
 
@@ -115,19 +99,10 @@
 
       <!--Comment and reply system ends hear -->
 
-      <!-- subscribe section -->
-      @include('home.subscribe')
-      <!-- end subscribe section -->
-      <!-- client section -->
-      @include('home.client')
-      <!-- end client section -->
-      <!-- footer start -->
-      @include('home.footer')
-      <!-- footer end -->
       <div class="cpy_">
          <p class="mx-auto">© 2023 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            Distributed By <a href="https://themewagon.com/" target="_blank">VNTAD</a>
          
          </p>
       </div>

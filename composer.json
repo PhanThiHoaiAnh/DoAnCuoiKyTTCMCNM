@@ -13,8 +13,10 @@
         "laravel/framework": "^9.0",
         "laravel/jetstream": "^3.0",
         "laravel/sanctum": "^2.14",
+        "laravel/socialite": "^5.10",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.11",
+        "realrashid/sweet-alert": "^7.1",
         "stripe/stripe-php": "^13.4"
     },
     "require-dev": {

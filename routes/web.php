@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GoogleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +94,12 @@ route::post('/add_reply',[HomeController::class,'add_reply']);
 
 route::get('/product_search',[HomeController::class,'product_search']);
 
+route::get('/products',[HomeController::class,'product']);
+
+route::get('/search_product',[HomeController::class,'search_product']);
+
+
+
+route::get('auth/google',[GoogleController::class,'googlepage']);
+
+route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
