@@ -22,7 +22,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $product=Product::paginate(6);
+        $product=Product::paginate(14);
         $comment=comment::orderby('id','desc')->get();
         $reply=reply::all();
         return view('home.userpage', compact('product','comment','reply'));
@@ -48,7 +48,7 @@ class HomeController extends Controller
         }
         else
         {
-            $product=Product::paginate(6);
+            $product=Product::paginate(14);
             $comment=comment::orderby('id','desc')->get();
             $reply=reply::all();
         return view('home.userpage', compact('product','comment','reply'));
@@ -358,13 +358,13 @@ class HomeController extends Controller
         $comment=comment::orderby('id','desc')->get();
         $reply=reply::all();
         $search_text=$request->search;
-        $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(6);
+        $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(14);
         return view('home.userpage',compact('product','comment','reply'));
     }
 
     public function product()
     {
-        $product=Product::paginate(6);
+        $product=Product::paginate(14);
         $comment=comment::orderby('id','desc')->get();
         $reply=reply::all();
         return view('home.all_product',compact('product','comment','reply'));
@@ -375,7 +375,7 @@ class HomeController extends Controller
         $comment=comment::orderby('id','desc')->get();
         $reply=reply::all();
         $search_text=$request->search;
-        $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(6);
+        $product=product::where('title','LIKE',"%$search_text%")->orwhere('catagory','LIKE',"$search_text")->paginate(14);
         return view('home.all_product',compact('product','comment','reply'));
     }
 

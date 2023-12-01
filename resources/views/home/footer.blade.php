@@ -7,9 +7,9 @@
                         <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> DaNang Viet Nam</p>
+                        <p><strong>ADDRESS:</strong> 48 Cao Thang, DaNang, Viet Nam</p>
                         <p><strong>TELEPHONE:</strong> +84 012 345 6789</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>EMAIL:</strong> famms.homeshop@gmail.com</p>
                       </div>
                    </div>
                </div>

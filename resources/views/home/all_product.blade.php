@@ -102,7 +102,7 @@
       <div class="cpy_">
          <p class="mx-auto">© 2023 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">VNTAD</a>
+            Distributed By <a href="https://VNTAD.com/" target="_blank">VNTAD</a>
          
          </p>
       </div>

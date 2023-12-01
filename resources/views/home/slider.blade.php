@@ -11,13 +11,14 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Welcome !!!
                                     </span>
                                     <br>
-                                    On Everything
+                                    FammsShop
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 FammsShop luôn cập nhật những xu hướng giày dép mới nhất trên thế giới, mang đến cho khách hàng những trải nghiệm mua sắm tuyệt vời. Đến với shop giày FammsShop, khách hàng sẽ được tư vấn nhiệt tình bởi đội ngũ nhân viên chuyên nghiệp, 
+                                 giúp khách hàng lựa chọn được đôi giày phù hợp nhất với nhu cầu sử dụng
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -36,13 +37,14 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Quality!
                                     </span>
                                     <br>
-                                    On Everything
+                                    FammsShop
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Với không gian mua sắm hiện đại, sang trọng, mang đến cho khách hàng những trải nghiệm mua sắm đẳng cấp. 
+                                 Shop cũng có chính sách bảo hành và đổi trả sản phẩm rõ ràng, đảm bảo quyền lợi của khách hàng.
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
@@ -61,13 +63,14 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Reliable!!
                                     </span>
                                     <br>
-                                    On Everything
+                                    FammsShop
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Với sứ mệnh mang đến cho khách hàng những đôi giày chất lượng cao, phù hợp với xu hướng thời trang, 
+                                 FammsShop luôn nỗ lực để trở thành địa chỉ mua sắm tin cậy của mọi khách hàng.
                                  </p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">

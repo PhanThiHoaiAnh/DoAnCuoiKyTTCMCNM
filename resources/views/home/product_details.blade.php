@@ -12,7 +12,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>Famms Shop</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href=" {{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -108,7 +108,7 @@
       <div class="cpy_">
          <p class="mx-auto">© 2023 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+            Distributed By <a href="https://VNTAD.com/" target="_blank">VNTAD</a>
          
          </p>
       </div>
